@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Franco Alconchel - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-container">
+          <h1 class="logo">Franco</h1>
+          <nav class="navbar-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#contact">Contacto</a>
+          </nav>
+          <button class="burger" id="burger">&#9776;</button>
+        </div>
+      </header>
+
+  <!-- Presentación -->
+  <header class="hero">
+    <img src="/images/profile.jpg" alt="Franco Alconchel" class="profile-img" />
+    <div class="hero-text">
+      <h1>Franco Alconchel</h1>
+      <p>Hola, soy Franco, tengo 26 años y soy programador web fullstack. Mi recorrido en el desarrollo comenzó desde el lado del frontend, donde me siento más cómodo y tengo mayor experiencia, aunque también cuento con conocimientos intermedios en backend para poder ofrecer soluciones completas.<br><br>
+        Trabajo con tecnologías como HTML5, CSS, Bootstrap y JavaScript, y tengo manejo de Node.js y MySQL para el desarrollo del lado del servidor. Si bien no me considero una persona especialmente creativa en lo visual, siempre busco compensarlo con código limpio, buenas prácticas y una fuerte orientación a resolver problemas.</p>
+    </div>
+  </header>
+
+  <!-- Proyectos -->
+  <section id="projects" class="projects">
+    <h2>Proyectos</h2>
+    <div class="project-grid">
+      <!-- Proyecto 1 -->
+      <div class="project-card">
+        <img src="images/captura ancora.jpg" alt="Proyecto 1">
+        <h3>Pagina web Ancora</h3>
+        <p>Web diseñada para una compañia de arquitectos para mayor visibilidad y contacto con los clientes.
+            Tecnologias utilizadas HTML5, CSS, Bootstrap y JavaScript.
+        </p>
+        <a href="https://github.com/usuario/proyecto" target="_blank">Ver en GitHub</a>
+      </div>
+      <div class="project-card">
+        <img src="images/captura ancora.jpg" alt="Proyecto 1">
+        <h3>Cotizacion de m2</h3>
+        <p>App diseñada para obtener el precio de construccion por m2 y tambien cuanto se cobra de honorarios.
+            Tecnologias utilizadas HTML5, CSS, Bootstrap, JavaScript y NodeJS.
+        </p>
+        <a href="https://github.com/usuario/proyecto" target="_blank">Ver en GitHub</a>
+      </div>
+      <div class="project-card">
+        <img src="images/captura ancora.jpg" alt="Proyecto 1">
+        <h3>MDTproductora</h3>
+        <p>Web diseñada para una productora audiovisual para visibilizar los servicios y el contenido que genera. Asi mismo generar contacto con futuros clientes.
+            Tecnologias utilizadas HTML5, CSS, Bootstrap y JavaScript.
+        </p>
+        <a href="https://github.com/usuario/proyecto" target="_blank">Ver en GitHub</a>
+      </div>
+      <div class="project-card">
+        <img src="images/captura ancora.jpg" alt="Proyecto 1">
+        <h3>App Clima</h3>
+        <p>App para saber el clima en tu region o cualquier parte del mundo.
+            Tecnologias utilizadas HTML5, CSS, JavaScript.
+        </p>
+        <a href="https://github.com/usuario/proyecto" target="_blank">Ver en GitHub</a>
+      </div>
+      <!-- Más proyectos... -->
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="skills" class="skills">
+    <h2>Habilidades</h2>
+    <div class="skills-icons">
+      <i class="devicon-html5-plain colored"></i>
+      <i class="devicon-css3-plain colored"></i>
+      <i class="devicon-javascript-plain colored"></i>
+      <i class="devicon-nodejs-plain colored"></i>
+      <i class="devicon-mysql-plain colored"></i>
+      <!-- Más íconos... -->
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact" class="contact">
+    <h2>Contacto</h2>
+    <form action="mailto:franco@example.com" method="POST" enctype="text/plain">
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo" required />
+      <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Franco Alconchel</p>
+    <div class="social-icons">
+      <a href="https://github.com/tuusuario" target="_blank"><i class="devicon-github-original"></i></a>
+      <a href="https://linkedin.com/in/tuusuario" target="_blank"><i class="devicon-linkedin-plain"></i></a>
+      <a href="https://instagram.com/tuusuario" target="_blank"><i class="devicon-twitter-original"></i></a>
+    </div>
+  </footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const navLinks = document.querySelector('.navbar-links');
+
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

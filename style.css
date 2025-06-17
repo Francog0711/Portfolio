@@ -100,8 +100,13 @@ body {
 
 
 .profile-img {
+<<<<<<< HEAD
   width: 300px;
   height: 300px;
+=======
+  width: 200px;
+  height: 200px;
+>>>>>>> 977ef9276fb72c0e4bcf8fcba78f6ac5697e0c4f
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;

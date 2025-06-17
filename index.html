@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Franco Alconchel - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-container">
+          <h1 class="logo">Franco</h1>
+          <nav class="navbar-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#contact">Contacto</a>
+          </nav>
+          <button class="burger" id="burger">&#9776;</button>
+        </div>
+      </header>
+
+  <!-- Presentación -->
+  <header class="hero">
+    <img src="/images/PROFILEFRANCO.jpeg" alt="Franco Alconchel" class="profile-img" />
+    <div class="hero-text">
+      <h1><span>Hola mi nombre es...</span><br>
+        FRANCO ALCONCHEL</h1>
+      <p>Soy un desarrollador Front-end con ganas de aplicar mis conocimientos y seguir aprendiendo!</p>
+    </div>
+  </header>
+
+  <!-- Proyectos -->
+  <section id="projects" class="projects">
+    <h2>PROYECTOS</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <img src="images/captura ancora.jpg" alt="Proyecto 1">
+        <div class="project-content">
+        <h3>Pagina web Ancora</h3>
+        <p>A pesar de estar en pleno desarrollo, mi experiencia como freelance con Ancora me permitió aplicar mis conocimientos en desarrollo web y trabajar en estrecha colaboración con un equipo para mejorar su presencia en línea y funcionalidad mediante el uso de tecnologías como Bootstrap, HTML, CSS y JavaScript.
+        </p>
+        <div class="enlaces">
+        <a href="https://francog0711.github.io/Ancora/"><i class="devicon-google-plain colored"></i></a>
+        <a href="https://github.com/Francog0711/Ancora" target="_blank"><i class="devicon-github-plain colored"></i></a>
+        </div>
+      </div>
+      </div>
+      <!-- Proyecto 2 -->
+      <div class="project-card">
+        <img src="images/CALCULAR.JPG" alt="Proyecto 2">
+        <div class="project-content">
+        <h3>Cotizacion de m2</h3>
+        <p>App diseñada para obtener el precio de construccion por m2 y tambien cuanto se cobra de honorarios.
+            Tecnologias utilizadas HTML5, CSS, Bootstrap, JavaScript y NodeJS.
+        </p>
+        <div class="enlaces">
+          <a href="https://francog0711.github.io/Ancora/calcular.html"><i class="devicon-google-plain colored"></i></a>
+          <a href="https://github.com/Francog0711/Ancora/blob/master/calcular.html" target="_blank"><i class="devicon-github-plain colored"></i></a>
+        </div>
+        </div>
+      </div>
+      <!-- Proyecto 3 --> 
+      <div class="project-card">
+        <img src="images/MDTPRODUCTORA.jpg" alt="Proyecto 3">
+        <div class="project-content">
+        <h3>MDTproductora</h3>
+        <p>Web diseñada para una productora audiovisual para visibilizar los servicios y el contenido que genera. Asi mismo generar contacto con futuros clientes.
+            Tecnologias utilizadas HTML5, CSS, Bootstrap y JavaScript.
+        </p>
+        <div class="enlaces">
+          <a href="https://mdtproductora.com/index.html"><i class="devicon-google-plain colored"></i></a>
+        <a href="https://github.com/Francog0711/MDTproductora" target="_blank"><i class="devicon-github-plain colored"></i></a>
+        </div>
+      </div>
+      </div>
+      <!-- Proyecto 4 -->
+      <div class="project-card">
+        <img src="images/WEATHERAPP.jpg" alt="Proyecto 4">
+        <div class="project-content">
+        <h3>App Clima</h3>
+        <p>App para saber el clima en tu region o cualquier parte del mundo.
+            Tecnologias utilizadas HTML5, CSS, JavaScript.
+        </p>
+        <div class="enlaces">
+        <a href="https://francog0711.github.io/wheather-app/"><i class="devicon-google-plain colored"></i></a>
+        <a href="https://github.com/Francog0711/wheather-app" target="_blank"><i class="devicon-github-plain colored"></i></a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="skills" class="skills">
+    <h2>HABILIDADES</h2>
+    <div class="skills-icons">
+      <i class="devicon-html5-plain colored"></i>
+      <i class="devicon-css3-plain colored"></i>
+      <i class="devicon-javascript-plain colored"></i>
+      <i class="devicon-nodejs-plain colored"></i>
+      <i class="devicon-mysql-plain colored"></i>
+      <i class="devicon-bootstrap-plain colored"></i>
+      <i class="devicon-github-plain colored"></i>
+      <i class="devicon-vscode-plain colored"></i>
+      <i class="devicon-react-plain colored"></i>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact" class="contact">
+    <h2>Contacto</h2>
+    <form action="mailto:francogabrielalconchel@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo" required />
+      <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Franco Alconchel</p>
+    <div class="social-icons">
+      <a href="https://github.com/tuusuario" target="_blank"><i class="devicon-github-original"></i></a>
+      <a href="https://linkedin.com/in/tuusuario" target="_blank"><i class="devicon-linkedin-plain"></i></a>
+      <a href="https://instagram.com/tuusuario" target="_blank"><i class="devicon-twitter-original"></i></a>
+    </div>
+  </footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const navLinks = document.querySelector('.navbar-links');
+
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

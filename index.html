@@ -24,11 +24,11 @@
 
   <!-- Presentación -->
   <header class="hero">
-    <img src="/images/perfilfrankix.jpg" alt="Franco Alconchel" class="profile-img" />
+    <img src="images/perfilfrankix.jpg" alt="Franco Alconchel" class="profile-img" />
     <div class="hero-text">
-      <h1><span>Hola mi nombre es...</span><br>
+      <h1><span>¡Hola! mi nombre es...</span><br>
         FRANCO ALCONCHEL</h1>
-      <p>Soy un desarrollador Front-end con ganas de aplicar mis conocimientos y seguir aprendiendo!</p>
+      <p>Tengo 26 años y soy desarrollador Front-end con ganas de aplicar mis conocimientos y seguir aprendiendo!</p>
     </div>
   </header>
 
@@ -112,12 +112,12 @@
   <!-- Contacto -->
   <section id="contact" class="contact">
     <h2>Contacto</h2>
-    <form action="mailto:francogabrielalconchel@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="nombre" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu correo" required />
-      <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+      <form id="contact-form">
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu correo" required />
+        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
   </section>
 
   <!-- Footer -->
@@ -136,6 +136,43 @@
 
   burger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('http://localhost:3000/guardar-contacto', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        Swal.fire({
+          icon: 'success',
+          title: '¡Mensaje enviado!',
+          text: 'Gracias por contactarte, te responderé pronto.',
+        });
+        this.reset();
+      } else {
+        throw new Error('Error en el servidor');
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No se pudo enviar el mensaje. Intentalo más tarde.',
+      });
+    }
   });
 </script>
 

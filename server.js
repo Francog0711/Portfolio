@@ -3,32 +3,35 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
+
+
 app.use(cors());
 app.use(bodyParser.json());
 
-// conexión a mongo
-mongoose.connect('mongodb+srv://francogabrielalconchel:franco0711@cluster0.vkqewcl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+// Servir archivos estáticos desde /public
+app.use(express.static(path.join(__dirname, 'public')));
 
-// model 
+// Conexión a MongoDB
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/contactos');
+
+// model
 const Contacto = mongoose.model('Contacto', {
   nombre: String,
   email: String,
   mensaje: String
 });
 
-// ruta de guardado y mail
+// guardar contacto y enviar email
 app.post('/guardar-contacto', async (req, res) => {
   try {
     const nuevoContacto = new Contacto(req.body);
     await nuevoContacto.save();
 
-    // enviar
+    
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -57,6 +60,13 @@ app.post('/guardar-contacto', async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log('Servidor corriendo en http://localhost:3000');
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Render usa process.env.PORT
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
 });

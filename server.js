@@ -9,26 +9,26 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// Conexión MongoDB
-mongoose.connect('mongodb://localhost:27017/contactos', {
+// conexión a mongo
+mongoose.connect('mongodb+srv://francogabrielalconchel:franco0711@cluster0.vkqewcl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
-// Modelo
+// model 
 const Contacto = mongoose.model('Contacto', {
   nombre: String,
   email: String,
   mensaje: String
 });
 
-// Ruta de guardado y envío de mail
+// ruta de guardado y mail
 app.post('/guardar-contacto', async (req, res) => {
   try {
     const nuevoContacto = new Contacto(req.body);
     await nuevoContacto.save();
 
-    // Enviar mail
+    // enviar
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {

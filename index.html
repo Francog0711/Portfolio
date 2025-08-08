@@ -114,36 +114,22 @@
   <!-- Certificados -->
 <section id="certificates" class="certificates">
   <h2>CERTIFICADOS</h2>
-  <div class="certificates-container">
-    <div class="certificate-card">
-      <h3>Aprende Javascript ES9, HTML, CSS3 y NodeJS desde cero
-</h3>
-      <p>Udemy - 2023</p>
-      <a href="https://drive.google.com/file/d/1FBjogI7OeY0Dr8MiJUyUo19FqnKTW9Qn/view?usp=sharing" target="_blank">Ver certificado</a>
+  <div class="certificates-gallery">
+    <div class="certificate-item">
+      <img src="images/certificado franco TodoCode.png" alt="Certificado 1">
     </div>
-    <div class="certificate-card">
-    <h3>Introducción a las Bases de Datos (Con MySQL)
-</h3>
-      <p>TodoCode - 2023</p>
-      <a href="https://drive.google.com/file/d/1h1J8Q3tyQrydd6g2SuAnvyIH3lt_1ToR/view?usp=sharing" target="_blank">Ver certificado</a>
-  </div>
-  <div class="certificate-card">
-    <h3>Fundamentos esenciales de la programación
-</h3>
-      <p>Linkedin - 2023</p>
-      <a href="https://drive.google.com/file/d/1RiDgyDlcnjaBYcaIio2Ziw3IZZbviouZ/view?usp=sharing" target="_blank">Ver certificado</a>
-  </div>
-  <div class="certificate-card">
-    <h3>Introducción a las habilidades profesionales en el desarrollo de software
-</h3>
-      <p>Linkedin - 2023</p>
-      <a href="https://drive.google.com/file/d/1-jG2Wm4Q_PVdurDExSBTEXOpEf8JH1z_/view?usp=sharing" target="_blank">Ver certificado</a>
-  </div>
-  <div class="certificate-card">
-    <h3>Fundamentos profesionales del desarrollo de software, por Microsoft y LinkedIn
-</h3>
-      <p>Linkedin - 2023</p>
-      <a href="https://drive.google.com/file/d/1MSAkLKKyg7PQAshVRjk4Xh5pszNVh6Q7/view?usp=sharing" target="_blank">Ver certificado</a>
+    <div class="certificate-item">
+      <img src="images/CertificadoDeFinalizacion_Introduccion a las habilidades profesionales en el desarrollo de software_page-0001.jpg" alt="Certificado 2">
+    </div>
+    <div class="certificate-item">
+      <img src="images/fundamentos microsoft y linkedin.jpg" alt="Certificado 3">
+    </div>
+     <div class="certificate-item">
+      <img src="images/fundamentos progrmacion linkedin.jpg" alt="Certificado 4">
+    </div>
+    <div class="certificate-item">
+      <img src="images/udemy franco.jpg" alt="Certificado 5">
+    </div>
   </div>
 </section>
 
@@ -169,6 +155,8 @@
     </div>
   </footer>
 
+
+<!--nav responsive--> 
 <script>
   const burger = document.getElementById('burger');
   const navLinks = document.querySelector('.navbar-links');
@@ -178,6 +166,31 @@
   });
 </script>
 
+
+<!--modal para agrandar las img de los certificados-->
+<div id="certModal" style="display:none; position:fixed; z-index:1001; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <img id="certModalImg" src="" style="max-width:90%; max-height:90%; border: 5px solid white; border-radius: 10px;">
+</div>
+
+
+<script>
+  const items = document.querySelectorAll(".certificate-item img");
+  const modal = document.getElementById("certModal");
+  const modalImg = document.getElementById("certModalImg");
+
+  items.forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+    });
+  });
+
+  modal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+</script>
+
+<!--sweetalert para contacto-->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
   document.getElementById('contact-form').addEventListener('submit', async function (e) {

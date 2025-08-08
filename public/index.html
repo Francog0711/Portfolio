@@ -193,6 +193,10 @@
 <!--sweetalert para contacto-->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+  const BASE_URL = window.location.hostname === 'localhost'
+  ? 'http://localhost:3000'
+  : 'https://portfolio-b6ap.onrender.com';
+
   document.getElementById('contact-form').addEventListener('submit', async function (e) {
     e.preventDefault();
 
@@ -200,30 +204,30 @@
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch('http://localhost:3000/guardar-contacto', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
+    const response = await fetch(`${BASE_URL}/guardar-contacto`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
 
-      if (response.ok) {
-        Swal.fire({
-          icon: 'success',
-          title: '¡Mensaje enviado!',
-          text: 'Gracias por contactarte, te responderé pronto.',
-        });
-        this.reset();
-      } else {
-        throw new Error('Error en el servidor');
-      }
-    } catch (error) {
+    if (response.ok) {
       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'No se pudo enviar el mensaje. Intentalo más tarde.',
+        icon: 'success',
+        title: '¡Mensaje enviado!',
+        text: 'Gracias por contactarte, te responderé pronto.',
       });
+      this.reset();
+    } else {
+      throw new Error('Error en el servidor');
+    }
+  } catch (error) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'No se pudo enviar el mensaje. Intentalo más tarde.',
+    });
     }
   });
 </script>
